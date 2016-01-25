@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblServerStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxRetroceder = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -42,11 +44,8 @@
             this.btnDesbRemoto = new System.Windows.Forms.Button();
             this.btnDesbLocal = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblServerStatus = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -57,7 +56,6 @@
             // 
             this.panel1.Controls.Add(this.lblServerStatus);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.checkBoxRetroceder);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.checkBoxIP);
@@ -69,7 +67,6 @@
             this.panel1.Controls.Add(this.btnDesbRemoto);
             this.panel1.Controls.Add(this.btnDesbLocal);
             this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.btnSair);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -78,21 +75,43 @@
             this.panel1.Size = new System.Drawing.Size(1356, 124);
             this.panel1.TabIndex = 5;
             // 
+            // lblServerStatus
+            // 
+            this.lblServerStatus.AutoSize = true;
+            this.lblServerStatus.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerStatus.Location = new System.Drawing.Point(479, 96);
+            this.lblServerStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerStatus.Name = "lblServerStatus";
+            this.lblServerStatus.Size = new System.Drawing.Size(96, 17);
+            this.lblServerStatus.TabIndex = 20;
+            this.lblServerStatus.Text = "Verificando";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(329, 96);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 17);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Status servidor remoto: ";
+            // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(378, 96);
+            this.label1.Location = new System.Drawing.Point(1267, 507);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 17;
             this.label1.Text = "00:00";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.label1.Visible = false;
             // 
             // checkBoxRetroceder
             // 
-            this.checkBoxRetroceder.Location = new System.Drawing.Point(16, 73);
+            this.checkBoxRetroceder.Location = new System.Drawing.Point(16, 66);
             this.checkBoxRetroceder.Name = "checkBoxRetroceder";
             this.checkBoxRetroceder.Size = new System.Drawing.Size(268, 21);
             this.checkBoxRetroceder.TabIndex = 0;
@@ -168,7 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(389, 40);
+            this.label2.Location = new System.Drawing.Point(413, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 17);
@@ -178,7 +197,7 @@
             // btnDesbRemoto
             // 
             this.btnDesbRemoto.Enabled = false;
-            this.btnDesbRemoto.Location = new System.Drawing.Point(308, 59);
+            this.btnDesbRemoto.Location = new System.Drawing.Point(332, 63);
             this.btnDesbRemoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbRemoto.Name = "btnDesbRemoto";
             this.btnDesbRemoto.Size = new System.Drawing.Size(181, 28);
@@ -191,7 +210,7 @@
             // btnDesbLocal
             // 
             this.btnDesbLocal.Enabled = false;
-            this.btnDesbLocal.Location = new System.Drawing.Point(308, 10);
+            this.btnDesbLocal.Location = new System.Drawing.Point(332, 17);
             this.btnDesbLocal.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbLocal.Name = "btnDesbLocal";
             this.btnDesbLocal.Size = new System.Drawing.Size(181, 28);
@@ -203,7 +222,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(16, 35);
+            this.btnLogin.Location = new System.Drawing.Point(16, 20);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(225, 28);
@@ -212,21 +231,10 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(760, 40);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(153, 28);
-            this.btnSair.TabIndex = 12;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 96);
+            this.checkBox1.Location = new System.Drawing.Point(16, 91);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(298, 21);
@@ -238,39 +246,18 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1007, 449);
+            this.label4.Location = new System.Drawing.Point(1007, 527);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(315, 17);
             this.label4.TabIndex = 21;
             this.label4.Text = "*** O desbloqueio poderá afetar o serviço de TV!";
             // 
-            // lblServerStatus
-            // 
-            this.lblServerStatus.AutoSize = true;
-            this.lblServerStatus.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerStatus.Location = new System.Drawing.Point(619, 97);
-            this.lblServerStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblServerStatus.Name = "lblServerStatus";
-            this.lblServerStatus.Size = new System.Drawing.Size(96, 17);
-            this.lblServerStatus.TabIndex = 20;
-            this.lblServerStatus.Text = "Verificando";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(469, 97);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 17);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Status servidor remoto: ";
-            // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.textBox1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 263);
+            this.textBox1.Location = new System.Drawing.Point(0, 341);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -289,7 +276,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(1356, 139);
+            this.webBrowser1.Size = new System.Drawing.Size(1356, 217);
             this.webBrowser1.TabIndex = 7;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
@@ -302,12 +289,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1356, 475);
+            this.ClientSize = new System.Drawing.Size(1356, 553);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "Interface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GVT Pace v5471 Unlock - v0.6";
@@ -324,7 +313,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnDesbRemoto;
         private System.Windows.Forms.Button btnDesbLocal;
         private System.Windows.Forms.Button btnLogin;
