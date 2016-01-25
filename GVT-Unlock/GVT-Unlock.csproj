@@ -56,7 +56,7 @@
   <ItemGroup>
     <Reference Include="HttpServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0505b774db687742, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\HttpServer\HttpServer\bin\Debug\HttpServer.dll</HintPath>
+      <HintPath>..\References\HttpServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
