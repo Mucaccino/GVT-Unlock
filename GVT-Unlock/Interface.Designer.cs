@@ -30,41 +30,42 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxRetroceder = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.checkBoxIP = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxIpGerencia = new System.Windows.Forms.TextBox();
             this.textBoxIpModem = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblServerStatus = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnDesbRemoto = new System.Windows.Forms.Button();
             this.btnDesbLocal = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblServerStatus = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkBoxIP = new System.Windows.Forms.CheckBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblServerStatus);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.checkBoxRetroceder);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.checkBoxIP);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBoxIpGerencia);
             this.panel1.Controls.Add(this.textBoxIpModem);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblServerStatus);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnDesbRemoto);
             this.panel1.Controls.Add(this.btnDesbLocal);
             this.panel1.Controls.Add(this.btnLogin);
@@ -76,6 +77,55 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1356, 124);
             this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(378, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "00:00";
+            this.label1.Visible = false;
+            // 
+            // checkBoxRetroceder
+            // 
+            this.checkBoxRetroceder.Location = new System.Drawing.Point(16, 73);
+            this.checkBoxRetroceder.Name = "checkBoxRetroceder";
+            this.checkBoxRetroceder.Size = new System.Drawing.Size(268, 21);
+            this.checkBoxRetroceder.TabIndex = 0;
+            this.checkBoxRetroceder.Text = "Retroceder desboqueio (runLevel(2))";
+            this.checkBoxRetroceder.UseVisualStyleBackColor = true;
+            this.checkBoxRetroceder.CheckedChanged += new System.EventHandler(this.checkBoxRetroceder_CheckedChanged);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(1210, 96);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(124, 17);
+            this.linkLabel1.TabIndex = 27;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Recuperar IP local";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // checkBoxIP
+            // 
+            this.checkBoxIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxIP.AutoSize = true;
+            this.checkBoxIP.Location = new System.Drawing.Point(1127, 14);
+            this.checkBoxIP.Name = "checkBoxIP";
+            this.checkBoxIP.Size = new System.Drawing.Size(207, 21);
+            this.checkBoxIP.TabIndex = 26;
+            this.checkBoxIP.Text = "Editar informações de setup";
+            this.checkBoxIP.UseVisualStyleBackColor = true;
+            this.checkBoxIP.CheckedChanged += new System.EventHandler(this.checkBoxIP_CheckedChanged);
             // 
             // label6
             // 
@@ -115,68 +165,25 @@
             this.textBoxIpModem.TabIndex = 22;
             this.textBoxIpModem.TextChanged += new System.EventHandler(this.textBoxIpModem_TextChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(676, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(315, 17);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "*** O desbloqueio poderá afetar o serviço de TV!";
-            // 
-            // lblServerStatus
-            // 
-            this.lblServerStatus.AutoSize = true;
-            this.lblServerStatus.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblServerStatus.Location = new System.Drawing.Point(621, 95);
-            this.lblServerStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblServerStatus.Name = "lblServerStatus";
-            this.lblServerStatus.Size = new System.Drawing.Size(96, 17);
-            this.lblServerStatus.TabIndex = 20;
-            this.lblServerStatus.Text = "Verificando";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(471, 95);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 17);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Status servidor remoto: ";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(333, 41);
+            this.label2.Location = new System.Drawing.Point(389, 40);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = "OU";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(377, 96);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "00:00";
-            this.label1.Visible = false;
-            // 
             // btnDesbRemoto
             // 
             this.btnDesbRemoto.Enabled = false;
-            this.btnDesbRemoto.Location = new System.Drawing.Point(268, 59);
+            this.btnDesbRemoto.Location = new System.Drawing.Point(308, 59);
             this.btnDesbRemoto.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbRemoto.Name = "btnDesbRemoto";
-            this.btnDesbRemoto.Size = new System.Drawing.Size(164, 28);
+            this.btnDesbRemoto.Size = new System.Drawing.Size(181, 28);
             this.btnDesbRemoto.TabIndex = 16;
-            this.btnDesbRemoto.Text = "2. Desbloqueio remoto";
+            this.btnDesbRemoto.Text = "2. Iniciar processo remoto";
             this.btnDesbRemoto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDesbRemoto.UseVisualStyleBackColor = true;
             this.btnDesbRemoto.Click += new System.EventHandler(this.btnDesbRemoto_Click);
@@ -184,19 +191,19 @@
             // btnDesbLocal
             // 
             this.btnDesbLocal.Enabled = false;
-            this.btnDesbLocal.Location = new System.Drawing.Point(268, 10);
+            this.btnDesbLocal.Location = new System.Drawing.Point(308, 10);
             this.btnDesbLocal.Margin = new System.Windows.Forms.Padding(4);
             this.btnDesbLocal.Name = "btnDesbLocal";
-            this.btnDesbLocal.Size = new System.Drawing.Size(164, 28);
+            this.btnDesbLocal.Size = new System.Drawing.Size(181, 28);
             this.btnDesbLocal.TabIndex = 15;
-            this.btnDesbLocal.Text = "2. Desbloqueio local";
+            this.btnDesbLocal.Text = "2. Iniciar processo local";
             this.btnDesbLocal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDesbLocal.UseVisualStyleBackColor = true;
             this.btnDesbLocal.Click += new System.EventHandler(this.btnDesbLocal_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(16, 38);
+            this.btnLogin.Location = new System.Drawing.Point(16, 35);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(225, 28);
@@ -207,7 +214,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(471, 38);
+            this.btnSair.Location = new System.Drawing.Point(760, 40);
             this.btnSair.Margin = new System.Windows.Forms.Padding(4);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(153, 28);
@@ -226,6 +233,38 @@
             this.checkBox1.TabIndex = 8;
             this.checkBox1.Text = "Habilitar SSH (Somente desbloqueio local)";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1007, 449);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(315, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "*** O desbloqueio poderá afetar o serviço de TV!";
+            // 
+            // lblServerStatus
+            // 
+            this.lblServerStatus.AutoSize = true;
+            this.lblServerStatus.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServerStatus.Location = new System.Drawing.Point(619, 97);
+            this.lblServerStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblServerStatus.Name = "lblServerStatus";
+            this.lblServerStatus.Size = new System.Drawing.Size(96, 17);
+            this.lblServerStatus.TabIndex = 20;
+            this.lblServerStatus.Text = "Verificando";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(469, 97);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 17);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Status servidor remoto: ";
             // 
             // textBox1
             // 
@@ -259,38 +298,12 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // checkBoxIP
-            // 
-            this.checkBoxIP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBoxIP.AutoSize = true;
-            this.checkBoxIP.Location = new System.Drawing.Point(1127, 14);
-            this.checkBoxIP.Name = "checkBoxIP";
-            this.checkBoxIP.Size = new System.Drawing.Size(207, 21);
-            this.checkBoxIP.TabIndex = 26;
-            this.checkBoxIP.Text = "Editar informações de setup";
-            this.checkBoxIP.UseVisualStyleBackColor = true;
-            this.checkBoxIP.CheckedChanged += new System.EventHandler(this.checkBoxIP_CheckedChanged);
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(1210, 96);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(124, 17);
-            this.linkLabel1.TabIndex = 27;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Recuperar IP local";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // Interface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1356, 475);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.panel1);
@@ -329,6 +342,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBoxIP;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.CheckBox checkBoxRetroceder;
     }
 }
 

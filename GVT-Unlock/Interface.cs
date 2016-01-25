@@ -30,6 +30,7 @@ namespace GVT_Unlock
         string ipGerencia = "192.168.25.200";
         string servidorRemoto = "desbloqueiogvt.ddns.net";
         string servidorRemotoIP = "";
+        int runLevel = 4;
 
         public Interface()
         {
@@ -68,7 +69,7 @@ namespace GVT_Unlock
 
                 timer1.Stop();
                 AppendTextBox("\r\nModem conectado, enviando configuração.\r\n");
-                byte[] buffer = Encoding.Default.GetBytes("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap-env:Envelope xmlns:soap-enc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:cwmp=\"urn:dslforum-org:cwmp-1-0\"><soap-env:Header><cwmp:ID soap-env:mustUnderstand=\"1\">55882f2177ab936c3f062f8f</cwmp:ID></soap-env:Header><soap-env:Body><cwmp:SetParameterValues><ParameterList soap-enc:arrayType=\"cwmp:ParameterValueStruct["+numparams+"]\"><ParameterValueStruct><Name>InternetGatewayDevice.Services.X_Pace_Com.Services.GvtConfig.AccessClass</Name><Value xsi:type=\"xsd:unsignedInt\">4</Value></ParameterValueStruct>"+opcionais+"</ParameterList><ParameterKey/></cwmp:SetParameterValues></soap-env:Body></soap-env:Envelope>");
+                byte[] buffer = Encoding.Default.GetBytes("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<soap-env:Envelope xmlns:soap-enc=\"http://schemas.xmlsoap.org/soap/encoding/\" xmlns:soap-env=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:cwmp=\"urn:dslforum-org:cwmp-1-0\"><soap-env:Header><cwmp:ID soap-env:mustUnderstand=\"1\">55882f2177ab936c3f062f8f</cwmp:ID></soap-env:Header><soap-env:Body><cwmp:SetParameterValues><ParameterList soap-enc:arrayType=\"cwmp:ParameterValueStruct["+numparams+"]\"><ParameterValueStruct><Name>InternetGatewayDevice.Services.X_Pace_Com.Services.GvtConfig.AccessClass</Name><Value xsi:type=\"xsd:unsignedInt\">"+runLevel+ "</Value></ParameterValueStruct>"+opcionais+"</ParameterList><ParameterKey/></cwmp:SetParameterValues></soap-env:Body></soap-env:Envelope>");
                 e.Response.Body.Write(buffer, 0, buffer.Length);
                 AppendTextBox("Finalizado.\r\n");
             }
@@ -373,6 +374,11 @@ namespace GVT_Unlock
         private void textBoxIpGerencia_TextChanged(object sender, EventArgs e)
         {
             ipGerencia = textBoxIpGerencia.Text;
+        }
+
+        private void checkBoxRetroceder_CheckedChanged(object sender, EventArgs e)
+        {
+            runLevel = checkBoxRetroceder.Checked ? 2 : 4;
         }
     }
  }
