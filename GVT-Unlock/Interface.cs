@@ -13,6 +13,7 @@ using System.Security.Cryptography.X509Certificates;
 using HttpServer;
 using HttpServer.Headers;
 using HttpListener = HttpServer.HttpListener;
+using System.Net.Sockets;
 
 namespace GVT_Unlock
 {
@@ -34,6 +35,9 @@ namespace GVT_Unlock
         {
             InitializeComponent();
             ((Control)webBrowser1).Enabled = false;
+            textBoxIpModem.Text = ipModem;
+            textBoxIpGerencia.Text = ipGerencia;
+            checkBoxIP_CheckedChanged();
         }
 
         public void AppendTextBox(string value)
@@ -336,6 +340,39 @@ namespace GVT_Unlock
                 lblServerStatus.Text = "Offline";
                 lblServerStatus.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        private void checkBoxIP_CheckedChanged(object sender= null, EventArgs e = null)
+        {
+            textBoxIpModem.Enabled = textBoxIpGerencia.Enabled = linkLabel1.Enabled = (checkBoxIP.Checked);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            textBoxIpGerencia.Text = GetLocalIPAddress().ToString();
+        }
+
+        public static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
+
+        private void textBoxIpModem_TextChanged(object sender, EventArgs e)
+        {
+            ipModem = textBoxIpModem.Text;
+        }
+
+        private void textBoxIpGerencia_TextChanged(object sender, EventArgs e)
+        {
+            ipGerencia = textBoxIpGerencia.Text;
         }
     }
  }
