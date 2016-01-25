@@ -16,7 +16,7 @@ using HttpListener = HttpServer.HttpListener;
 
 namespace GVT_Unlock
 {
-    public partial class Form1 : Form
+    public partial class Interface : Form
     {
         int tempoEspera = 0;
         int unlockSent = 0;
@@ -30,7 +30,7 @@ namespace GVT_Unlock
         string servidorRemoto = "desbloqueiogvt.ddns.net";
         string servidorRemotoIP = "";
 
-        public Form1()
+        public Interface()
         {
             InitializeComponent();
             ((Control)webBrowser1).Enabled = false;

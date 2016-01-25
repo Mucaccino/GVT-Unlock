@@ -1,6 +1,6 @@
 ﻿namespace GVT_Unlock
 {
-    partial class Form1
+    partial class Interface
     {
         /// <summary>
         /// Required designer variable.

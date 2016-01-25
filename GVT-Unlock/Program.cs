@@ -24,7 +24,7 @@ namespace GVT_Unlock
                 mutex = new Mutex(true, "GVTUnlock");
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                Application.Run(new Interface());
                 return;
             }
             if (mutex != null)
